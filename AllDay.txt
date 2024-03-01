@@ -1,0 +1,3219 @@
+Day-1
+
+2.Write the “Hello World” - first Java Program. Compile and execute it.
+
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+
+ 
+
+3. Write comments (Author, date, objective of the program, main function) in        the above program.
+
+class p2 {
+    public static void main(String[] args) {
+        System.out.println("Author : Hit Soliya");
+        System.out.println("Date : January 22,2024");
+        System.out.println("Objective : This program assingment a simple");
+    }
+}
+
+4.   Create following arrays and assign incremental values starting from 1 to each element. 
+    1.	Array with 2 rows and 3 columns. 
+    2.	Array with 2 rows. First row has 3 cells, and second row has 2 cells.
+            Print the content of both the arrays. 
+
+class IncrementalArrays {
+    public static void main(String[] args) {
+        
+        int[][] array1 = new int[2][3];
+        fillArray(array1);
+
+        
+        int[][] array2 = new int[2][];
+        array2[0] = new int[3];
+        array2[1] = new int[2];
+        fillArray(array2);
+
+        
+        System.out.println("Array 1:");
+        printArray(array1);
+
+        System.out.println("\nArray 2:");
+        printArray(array2);
+    }
+
+    
+    private static void fillArray(int[][] array) {
+        int value = 1;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                array[i][j] = value++;
+            }
+        }
+    }
+
+    
+    private static void printArray(int[][] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+ 
+
+
+
+
+
+6.	Write a program to print your name and address.
+class NameAndAddress {
+    public static void main(String[] args) {
+        // Print name and address
+        System.out.println("Name: Your Name");
+        System.out.println("Address: Anida, Amreli, Gujrat");
+    }
+}
+
+Day-2
+
+1.	Write a program to perform addition of two numbers and display its answer. (No need to take user input)
+
+class AdditionProgram {
+    public static void main(String[] args) {
+       
+        int num1 = 5;
+        int num2 = 7;
+
+        
+        int sum = num1 + num2;
+
+       
+        System.out.println("The sum of " + num1 + " and " + num2 + " is: " + sum);
+    }
+}
+
+ 
+
+
+2.	Write a program to perform addition of two given numbers and display its answer. (With user input)
+
+import java.util.Scanner;
+
+class AdditionWithInput {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the first number: ");
+        int num1 = scanner.nextInt();
+        System.out.print("Enter the second number: ");
+        
+        int num2 = scanner.nextInt();
+
+       
+        scanner.close();
+        int sum = num1 + num2;
+
+        System.out.println("The sum of " + num1 + " and " + num2 + " is: " + sum);
+    }
+}
+
+3.	Write a program to perform addition of numbers between 3 to 10 using for loop.
+
+class AdditionWithForLoop {
+    public static void main(String[] args) {
+        int startNumber = 3;
+        int endNumber = 10;
+        int sum = 0;
+        for (int i = startNumber; i <= endNumber; i++) {
+            sum += i;
+        }
+
+             System.out.println("The sum of numbers between " + startNumber + " and " + endNumber + " is: " + sum);
+    }
+}
+
+ 
+
+
+4.	Write a program to find the maximum from two numbers. (Without user input)
+
+class MaximumOfTwoNumbers {
+    public static void main(String[] args) {
+        
+        int num1 = 15;
+        int num2 = 8;
+
+        
+        int maximum = (num1 > num2) ? num1 : num2;
+
+        System.out.println("The maximum of " + num1 + " and " + num2 + " is: " + maximum);
+    }
+}
+
+ 
+
+
+
+5.	Check the working of the following code and give comments with respect to use of “outer” :
+      outer:
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                if (j == 1)
+                    break outer;
+                System.out.println(" value of j = " + j);
+            }
+        } // end of outer loop
+
+ 
+
+6.	Write a program to create three objects of Student class(name, age). Write getDetails method which takes user inputs (name and age). Write other method named displayDetails to display the name and age of the user. Create three objects and test working of above two methods.
+
+import java.util.*;
+
+class getSdetail {
+    String name;
+    int age;
+
+    void getDetails() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter student name: ");
+        name = sc.nextLine();
+
+        System.out.print("Enter student age: ");
+        age = sc.nextInt();
+    }
+
+    void displayDetails() {
+        System.out.println("Student Name: " + name);
+        System.out.println("Student Age: " + age);
+    }
+}
+
+class Sgd {
+    public static void main(String[] args) {
+        getSdetail student1 = new getSdetail();
+        getSdetail student2 = new getSdetail();
+        getSdetail student3 = new getSdetail();
+
+
+        System.out.println("Enter details for Student 1:");
+        student1.getDetails();
+
+        System.out.println("\nEnter details for Student 2:");
+        student2.getDetails();
+
+        System.out.println("\nEnter details for Student 3:");
+        student3.getDetails();
+
+
+        System.out.println("\nDetails for Student 1:");
+        student1.displayDetails();
+
+        System.out.println("\nDetails for Student 2:");
+        student2.displayDetails();
+
+        System.out.println("\nDetails for Student 3:");
+        student3.displayDetails();
+    }
+}
+
+
+Day-3
+
+
+1.	¬¬¬¬¬¬¬¬¬¬¬ Modify the Student class to add default, parameterized & copy constructors. Create three objects of the Student class to test the above three constructors. Print the content of the all the three objects. 
+2.	Modify the above program to jump from one constructor to other constructor. 
+3.	Add initializer and static block in the above program. 
+
+class Student2 {
+    String name;
+    int age;
+
+   
+    public Student2() {
+        name = "Unknown";
+        age = 0;
+    }
+
+   
+    public Student2(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+   
+    public Student2(Student2 otherStudent) {
+        this(otherStudent.name, otherStudent.age); // Jump to parameterized constructor
+   
+    }
+
+
+        {
+        System.out.println("Initializer Block Called");
+    }
+
+    
+    static {
+        System.out.println("Static Block Called");
+    }
+
+    
+    void displayDetails() {
+        System.out.println("Student Name: " + name);
+        System.out.println("Student Age: " + age);
+    }
+}
+
+class Stestp1 {
+    public static void main(String[] args) {
+        Student2 s1 = new Student2(); // Default constructor
+        Student2 s2 = new Student2("Alice", 20); // Parameterized constructor
+        Student2 s3 = new Student2(s2); // Copy constructor
+
+        System.out.println("Details for Student 1:");
+        s1.displayDetails();
+
+        System.out.println("\nDetails for Student 2:");
+        s2.displayDetails();
+
+        System.out.println("\nDetails for Student 3 (Copy of Student 2):");
+        s3.displayDetails();
+    }
+}
+
+
+Day-4
+
+
+1.	Modify the Student class to add a method which will compare two other Student’s  age and print the name of student with highest age.
+2.	Modify the above method so that it returns the Student’s object having the highest age. Print the name of the student and test your program. Test your program. 
+
+class Student {
+    String name;
+    int age;
+
+ 
+    public Student() {
+        this("Unknown", 0);
+    }
+
+    
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    
+    public Student(Student otherStudent) {
+        this(otherStudent.name, otherStudent.age);
+    }
+
+    
+    void displayDetails() {
+        System.out.println("Student Name: " + name);
+        System.out.println("Student Age: " + age);
+        System.out.println();
+    }
+
+    
+    static void compareAges(Student student1, Student student2) {
+        if (student1.age > student2.age) {
+            System.out.println(student1.name + " has the highest age.");
+        } else if (student1.age < student2.age) {
+            System.out.println(student2.name + " has the highest age.");
+        } else {
+            System.out.println("Both students have the same age.");
+        }
+    }
+}
+
+class Max {
+    public static void main(String[] args) {
+    
+        Student student1 = new Student("Alice", 22);
+        Student student2 = new Student("Bob", 25);
+
+    
+        Student.compareAges(student1, student2);
+    }
+}
+
+ 
+
+3.	Create a Calculator class to add two int and to add two floats. Use method overloading.
+
+class Calculator {
+    
+    int add(int num1, int num2) {
+        return num1 + num2;
+    }
+
+    
+    float add(float num1, float num2) {
+        return num1 + num2;
+    }
+}
+
+class CalculatorTest {
+    public static void main(String[] args) {
+    
+        Calculator calculator = new Calculator();
+
+    
+        int sumIntegers = calculator.add(5, 7);
+        System.out.println("Sum of integers: " + sumIntegers);
+
+    
+        float sumFloats = calculator.add(3.5f, 2.8f);
+        System.out.println("Sum of floats: " + sumFloats);
+    }
+}
+
+ 
+
+4.	In the Student class add static variable to store the number of the objects created. Display the value of the count using the static method. Test your program.
+
+class Std {
+    String name;
+    int age;
+    static int studentCount = 0; // Static variable to store the number of objects created
+
+   
+    public Std() {
+   
+        this("Unknown", 0);
+        studentCount++; // Increment count when a new object is created
+    }
+
+   
+    public Std(String name, int age) {
+        this.name = name;
+        this.age = age;
+        studentCount++; // Increment count when a new object is created
+    }
+
+   
+    public Std(Std otherStudent) {
+        this(otherStudent.name, otherStudent.age);
+    }
+
+       void displayDetails() {
+        System.out.println("Student Name: " + name);
+        System.out.println("Student Age: " + age);
+        System.out.println();
+    }
+
+   
+    static void displayStudentCount() {
+        System.out.println("Number of Students: " + studentCount);
+    }
+}
+
+public class studentcount {
+    public static void main(String[] args) {
+   
+        Std student1 = new Std();
+        Std student2 = new Std("Alice", 22);
+        Std student3 = new Std(student2);
+
+       System.out.println("Details for Student 1:");
+        student1.displayDetails();
+
+        System.out.println("Details for Student 2:");
+        student2.displayDetails();
+
+        System.out.println("Details for Student 3 (Copy of Student 2):");
+        student3.displayDetails();
+
+   
+        Std.displayStudentCount();
+    }
+}
+
+
+5.	Create an Outer class with instance variable named “a”. Inside this Outer class, create an Inner class. This inner class must have instance variable named “b”. Assign some initial values to this “a” and “b”. Create object of Outer class and print values of “a” and “b”. 
+class Outer {
+    int a;
+
+    
+    Outer(int a) {
+        this.a = a;
+    }
+
+    
+    class Inner {
+        int b; 
+        Inner(int b) {
+            this.b = b;
+        }
+    }
+
+    public static void main(String[] args) {
+       
+        Outer outerObj = new Outer(10);
+
+       
+        Outer.Inner innerObj = outerObj.new Inner(20);
+
+       
+        System.out.println("Value of 'a': " + outerObj.a);
+        System.out.println("Value of 'b': " + innerObj.b);
+    }
+}
+
+
+Day-5
+
+
+1.	Create following classes:
+a.	Emp(id,name,age) 
+b.	PartTimeEmp(numberOfHours,ratePerHour) inherits Emp
+c.	FullTimeEmp(basicPay,DA) inherits Emp
+In all the three classes, add default and parameterized constructors. Create one object of both the child classes and print the content of both the objects.
+
+In the all the three classes, add getDetails and showDetails methods. Create one object of both the child classes and print content of both the objects.
+
+
+class Emp {
+    int id;
+    String name;
+    int age;
+
+
+    public Emp() {
+        this(0, "Unknown", 0);
+    }
+
+    
+    public Emp(int id, String name, int age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
+
+    
+    public void getDetails() {
+        
+    }
+
+    
+    public void showDetails() {
+        System.out.println("Employee ID: " + id);
+        System.out.println("Employee Name: " + name);
+        System.out.println("Employee Age: " + age);
+    }
+}
+
+class PartTimeEmp extends Emp {
+    int numberOfHours;
+    double ratePerHour;
+
+    
+    public PartTimeEmp() {
+        super(); 
+        this.numberOfHours = 0;
+        this.ratePerHour = 0.0;
+    }
+
+    
+    public PartTimeEmp(int id, String name, int age, int numberOfHours, double ratePerHour) {
+        super(id, name, age); 
+        this.numberOfHours = numberOfHours;
+        this.ratePerHour = ratePerHour;
+    }
+
+    
+    public void showDetails() {
+        super.showDetails();
+        System.out.println("Number of Hours: " + numberOfHours);
+        System.out.println("Rate per Hour: " + ratePerHour);
+    }
+}
+
+class FullTimeEmp extends Emp {
+    double basicPay;
+    double DA;
+
+    
+    public FullTimeEmp() {
+        super(); // Call the default constructor of the base class
+        this.basicPay = 0.0;
+        this.DA = 0.0;
+    }
+
+    
+    public FullTimeEmp(int id, String name, int age, double basicPay, double DA) {
+        super(id, name, age); // Call the parameterized constructor of the base class
+        this.basicPay = basicPay;
+        this.DA = DA;
+    }
+
+    
+    public void showDetails() {
+        super.showDetails();
+        System.out.println("Basic Pay: " + basicPay);
+        System.out.println("Dearness Allowance (DA): " + DA);
+    }
+}
+
+class EmpTest {
+    public static void main(String[] args) {
+        PartTimeEmp partTimeEmp = new PartTimeEmp(101, "John", 25, 20, 15.0);
+        
+        
+        FullTimeEmp fullTimeEmp = new FullTimeEmp(102, "Alice", 30, 50000.0, 2000.0);
+
+        
+        System.out.println("Details of PartTimeEmp:");
+        partTimeEmp.showDetails();
+        System.out.println();
+
+        System.out.println("Details of FullTimeEmp:");
+        fullTimeEmp.showDetails();
+    }
+}
+
+
+Day-6
+
+
+1.	In the day-5 program, create object / reference of Emp class which will point to any of the child class. Call the getDetails and showDetails methods and check working of polymorphism.
+
+class Emp {
+    int id;
+    String name;
+    int age;
+
+    
+    public Emp() {
+        this.id = 0;
+        this.name = "";
+        this.age = 0;
+    }
+
+  
+    public Emp(int id, String name, int age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
+
+    
+    public String getDetails() {
+        return "ID: " + id + ", Name: " + name + ", Age: " + age;
+    }
+
+   
+    public void showDetails() {
+        System.out.println(getDetails());
+    }
+}
+
+
+class PartTimeEmp extends Emp {
+    int numberOfHours;
+    double ratePerHour;
+
+    public PartTimeEmp() {
+        super();
+        this.numberOfHours = 0;
+        this.ratePerHour = 0.0;
+    }
+
+    public PartTimeEmp(int id, String name, int age, int numberOfHours, double ratePerHour) {
+        super(id, name, age);
+        this.numberOfHours = numberOfHours;
+        this.ratePerHour = ratePerHour;
+    }
+
+    public String getDetails() {
+        return super.getDetails() + ", Number of Hours: " + numberOfHours + ", Rate per Hour: " + ratePerHour;
+    }
+}
+
+class FullTimeEmp extends Emp {
+    double basicPay;
+    double DA;
+
+    public FullTimeEmp() {
+        super();
+        this.basicPay = 0.0;
+        this.DA = 0.0;
+    }
+
+    public FullTimeEmp(int id, String name, int age, double basicPay, double DA) {
+        super(id, name, age);
+        this.basicPay = basicPay;
+        this.DA = DA;
+    }
+
+    public String getDetails() {
+        return super.getDetails() + ", Basic Pay: " + basicPay + ", DA: " + DA;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+       
+        PartTimeEmp partTimeEmp = new PartTimeEmp(101, "John", 25, 20, 15.5);
+        
+        FullTimeEmp fullTimeEmp = new FullTimeEmp(102, "Alice", 30, 50000, 10000);
+
+        
+        System.out.println("Details of Part Time Employee:");
+        System.out.println(partTimeEmp.getDetails());
+
+        
+        System.out.println("\nDetails of Full Time Employee:");
+        System.out.println(fullTimeEmp.getDetails());
+
+        // Polymorphism example
+        Emp emp1 = new PartTimeEmp(103, "Bob", 22, 15, 12.5);
+        Emp emp2 = new FullTimeEmp(104, "Eva", 28, 60000, 12000);
+
+        System.out.println("\nPolymorphism Example:");
+        System.out.println("Details of Employee 1:");
+        emp1.showDetails();
+        System.out.println("\nDetails of Employee 2:");
+        emp2.showDetails();
+    }
+}
+
+
+2.	In the day-5 program, make the Emp class as an abstract class. Add calculateSalary as abstract function. Try to create object of this class. 
+
+abstract class Emp {
+    int id;
+    String name;
+    int age;
+
+   
+    public Emp() {
+        this.id = 0;
+        this.name = "";
+        this.age = 0;
+    }
+
+    
+    public Emp(int id, String name, int age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
+
+    
+    public abstract double calculateSalary();
+
+    
+    public String getDetails() {
+        return "ID: " + id + ", Name: " + name + ", Age: " + age;
+    }
+
+    public void showDetails() {
+        System.out.println(getDetails());
+    }
+}
+
+
+class PartTimeEmp extends Emp {
+    int numberOfHours;
+    double ratePerHour;
+
+    
+    public PartTimeEmp() {
+        super();
+        this.numberOfHours = 0;
+        this.ratePerHour = 0.0;
+    }
+
+   
+    public PartTimeEmp(int id, String name, int age, int numberOfHours, double ratePerHour) {
+        super(id, name, age);
+        this.numberOfHours = numberOfHours;
+        this.ratePerHour = ratePerHour;
+    }
+
+    
+    public double calculateSalary() {
+        return numberOfHours * ratePerHour;
+    }
+
+    
+    public String getDetails() {
+        return super.getDetails() + ", Number of Hours: " + numberOfHours + ", Rate per Hour: " + ratePerHour;
+    }
+}
+
+
+class FullTimeEmp extends Emp {
+    double basicPay;
+    double DA;
+
+    
+    public FullTimeEmp() {
+        super();
+        this.basicPay = 0.0;
+        this.DA = 0.0;
+    }
+
+    
+    public FullTimeEmp(int id, String name, int age, double basicPay, double DA) {
+        super(id, name, age);
+        this.basicPay = basicPay;
+        this.DA = DA;
+    }
+
+    
+    public double calculateSalary() {
+        return basicPay + DA;
+    }
+
+    
+    public String getDetails() {
+        return super.getDetails() + ", Basic Pay: " + basicPay + ", DA: " + DA;
+    }
+}
+
+public class Abs {
+    public static void main(String[] args) {
+        
+        PartTimeEmp partTimeEmp = new PartTimeEmp(101, "John", 25, 20, 15.5);
+       
+        FullTimeEmp fullTimeEmp = new FullTimeEmp(102, "Alice", 30, 50000, 10000);
+
+        
+        System.out.println("Details of Part Time Employee:");
+        System.out.println(partTimeEmp.getDetails());
+        System.out.println("Salary: " + partTimeEmp.calculateSalary());
+
+        
+        System.out.println("\nDetails of Full Time Employee:");
+        System.out.println(fullTimeEmp.getDetails());
+        System.out.println("Salary: " + fullTimeEmp.calculateSalary());
+
+        
+    }
+}
+
+
+Day-7
+
+
+1.	For the Student class(id,name,age) override toString and equals methods of object class. Test working of both the methods.
+
+
+import java.util.Objects;
+class Student {
+ private int id;
+ private String name;
+ private int age;
+ 
+ public Student(int id, String name, int age) {
+ this.id = id;
+ this.name = name;
+ this.age = age;
+ }
+ 
+ 
+ public String toString() {
+ return "Student{" +
+ "id=" + id +
+ ", name='" + name + '\'' +
+ ", age=" + age +
+ '}';
+ }
+ 
+ 
+ public boolean equals(Object obj) {
+ if (this == obj) {
+ return true;
+ }
+ if (obj == null || getClass() != obj.getClass()) {
+ return false;
+ }
+ Student student = (Student) obj;
+ return id == student.id &&
+ age == student.age &&
+ Objects.equals(name, student.name);
+ }
+ public static void main(String[] args) {
+ 
+ Student student1 = new Student(1, "John", 20);
+ Student student2 = new Student(2, "Jane", 22);
+ Student student3 = new Student(1, "John", 20);
+ 
+ System.out.println("Student 1: " + student1);
+ System.out.println("Student 2: " + student2);
+ System.out.println("Student 3: " + student3);
+
+ System.out.println("student1.equals(student2): " + student1.equals(student2));
+ System.out.println("student1.equals(student3): " + student1.equals(student3));
+ }
+}
+
+ 
+
+
+2.	Create Interface Ione with class constant a having initial value 10. 
+Create Interface Itwo with class constant b having initial value 20.
+Create Interface Ithree with class constant c having initial value 30.
+Interface Ithree must inherit Ione & Itwo (multiple inheritance). 
+Crete class Test which implements Ithree. Test your program by creating an object of Test class and printing contents of a, b and c class constants.
+interface Ione{
+    int a=10;
+    }
+    interface Itwo{
+    int b=20;
+    }
+    interface Ithree extends Ione,Itwo {
+    int c=30;
+    }
+    class Test implements Ithree{
+    public static void main(String[] args){
+    Test t1=new Test();
+    System.out.println("a: " + t1.a);
+     System.out.println("b: " + t1.b);
+     System.out.println("c: " + t1.c);
+    }
+    }
+
+
+Day-8
+
+
+1 .rite a program which will handle the ArrayIndexOutOfBoundsException and 
+    DivideByZeroException with multiple catch and finally block.
+
+
+
+class ArrayIndexOutOfBoundsException {
+    public static void main(String[] args) {
+        try {
+            int array[] = new int[10];
+            array[10] = 30 / 0;
+            array[20] = 40; 
+        } catch (ArithmeticException e) {
+            System.out.println("An ArithmeticException occurred: " + e.getMessage());
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("An ArrayIndexOutOfBoundsException occurred: " + e.getMessage());
+        } finally {
+            System.out.println("This code will run no matter what.");
+        }
+    }
+}
+
+2	For the Student class (id,name,age), write a program to raise an user define exception for the age less than 20 years.
+
+class InvalidAgeException extends Exception {
+    public InvalidAgeException(String message) {
+        super(message);
+    }
+}
+
+class Student {
+    private int id;
+    private String name;
+    private int age;
+
+    public Student(int id, String name, int age) throws InvalidAgeException {
+        this.id = id;
+        this.name = name;
+        if (age < 20) {
+            throw new InvalidAgeException("Age should be at least 20 years.");
+        } else {
+            this.age = age;
+        }
+    }
+
+    public static void main(String[] args) {
+        try {
+            Student student = new Student(1, "John Doe", 17);
+        } catch (InvalidAgeException e) {
+            System.out.println("An InvalidAgeException occurred: " + e.getMessage());
+        }
+    }
+}
+
+Day-9
+
+
+1.	With the help of Student(id,name,age) class do the followings:
+a.	Create list of 5 students. Iterate from first to last student and display all the information about each student.
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Student {
+    int id;
+    String name;
+    int age;
+
+    public Student(int id, String name, int age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
+
+    public String toString() {
+        return "Student[id=" + id + ", name=" + name + ", age=" + age + "]";
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        List<Student> students = new ArrayList<>();
+        students.add(new Student(1, "Hit Soliya", 21));
+        students.add(new Student(2, "Mohit Libachiya", 20));
+        students.add(new Student(3, "Wagha Kiran", 23));
+        students.add(new Student(4, "Gupta Vivek", 20));
+        students.add(new Student(5, "Patel Bhutik", 22));
+        for (Student student : students) {
+            System.out.println(student);
+        }
+    }
+}
+
+
+ 
+
+
+
+b.	Create stack of 5 students. Iterate from first to last student and display all the information about each student.
+
+
+import java.util.Stack;
+class Student {
+ int id;
+ String name;
+ int age;
+ public Student(int id, String name, int age) {
+ this.id = id;
+ this.name = name;
+ this.age = age;
+ }
+ public String toString() {
+ return "Student[id=" + id + ", name=" + name + ", age=" + age + "]";
+ }
+}
+class B {
+ public static void main(String[] args) {
+ Stack<Student> students = new Stack<>();
+ students.push(new Student(1, "Hit Soliya", 21));
+ students.push(new Student(2, "Parmar Maulik", 20));
+ students.push(new Student(3, "Wagh Kiran", 23));
+ students.push(new Student(4, "Gupta Vivek", 20));
+ students.push(new Student(5, "Samir Prajapati", 22));
+ System.out.println("Stack: ");
+ for (Student student : students) {
+ System.out.println(student);
+ }
+ System.out.println("Popped: " + students.pop());
+ System.out.println("Stack after popping: ");
+ for (Student student : students) {
+ System.out.println(student);
+ }
+ }
+}
+
+
+
+ 
+
+
+
+
+c.	Create vector of 5 students. Iterate from first to last student and display all the information about each student.
+
+import java.util.Vector;
+
+class Student {
+    int id;
+    String name;
+    int age;
+
+    public Student(int id, String name, int age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
+
+    public String toString() {
+        return "Student[id =" + id + ", name = " + name + ", age = " + age + "]";
+    }
+}
+
+class studentInfo {
+    public static void main(String[] args) {
+        Vector<Student> students = new Vector<>();
+        students.add(new Student(1, "Hit Soliya", 21));
+        students.add(new Student(2, "Gupta Vivek", 20));
+        students.add(new Student(3, "Wagh Kiran", 23));
+        students.add(new Student(4, "Ketan Rathod", 21));
+        students.add(new Student(5, "Patel Bhutik", 20));
+
+        System.out.println("Vector: ");
+        for (Student student : students) {
+            System.out.println(student);
+        }
+    }
+}
+ 
+Day-11
+
+
+1.	Write a multi-threaded program in which two threads prints 1 to 5000 numbers by extending Thread class.
+
+
+class NumberPrinter extends Thread {
+    private final int start;
+    private final int end;
+
+    public NumberPrinter(int start, int end) {
+        this.start = start;
+        this.end = end;
+
+    }
+
+
+    public void run() {
+
+        for (int i = start; i <= end; i++) {
+            System.out.println(i);
+        }
+
+    }
+
+    public static void main(String[] args) {
+        int mid = 5000 / 2;
+        NumberPrinter thread1 = new NumberPrinter(1, mid + 1);
+        NumberPrinter thread2 = new NumberPrinter(mid + 2, 5000);
+        thread1.start();
+        thread2.start();
+        try {
+            thread1.join();
+            thread2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+
+        }
+
+        System.out.println("All numbers printed!");
+
+    }
+
+}
+
+ 
+
+
+2.Write a multi-threaded program in which two threads prints 1 to 5000 numbers by implementing Runnable interface.
+
+class NumPrint implements Runnable {
+    private final int start;
+    private final int end;
+
+    public NumPrint(int start, int end) {
+        this.start = start;
+        this.end = end;
+
+    }
+
+    public void run() {
+
+        for (int i = start; i <= end; i++) {
+            System.out.println(i);
+        }
+
+    }
+
+    public static void main(String[] args) {
+        int mid = 5000 / 2;
+        NumPrint printer1 = new NumPrint(1, mid);
+        NumPrint printer2 = new NumberPrinter(mid + 1, 5000);
+        Thread thread1 = new Thread(printer1);
+        Thread thread2 = new Thread(printer2);
+        thread1.start();
+        thread2.start();
+
+        try {
+
+            thread1.join();
+            thread2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("All numbers printed!");
+
+    }
+
+}
+
+
+Day-12
+
+
+1.	Write a multi-threaded program in which two threads access the common variable count which is initialize with 0. Both the read this count and print on console along with thread name. After  printing, it will increment the content of this count variable. Both thread will do this work for 5000 times. Use the synchronization for count increment logic. 
+
+class CountPrinter implements Runnable {
+    private static int count;
+
+    public void run() {
+
+        for (int i = 0; i < 5000; i++) {
+
+            synchronized (CountPrinter.class) { // Use class as lock directly int currentCount = count;
+                System.out.println(Thread.currentThread().getName() + ": " + currentCount);
+                count++;
+            }
+
+        }
+
+    }
+
+    public static void main(String[] args) {
+        CountPrinter printer = new CountPrinter();
+        Thread thread1 = new Thread(printer);
+        Thread thread2 = new Thread(printer);
+        thread1.start();
+        thread2.start();
+        try {
+            thread1.join();
+
+            thread2.join();
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Final count: " + count);
+
+    }
+
+}
+
+
+2.	Write a program to create a new folder, rename and delete it.
+
+
+import java.io.File;
+
+class FolderOperations {
+    public static void main(String[] args) {
+        String folderName = "NewFolder";
+        File folder = new File(folderName);
+
+        // Create the folder
+        boolean folderCreated = folder.mkdir();
+        if (folderCreated) {
+            System.out.println("Folder created successfully.");
+        } else {
+            System.out.println("Failed to create folder.");
+            return;
+        }
+
+        // Rename the folder
+        String newFolderName = "RenamedFolder";
+        File newFolder = new File(newFolderName);
+        boolean renamed = folder.renameTo(newFolder);
+        if (renamed) {
+            System.out.println("Folder renamed successfully.");
+        } else {
+            System.out.println("Failed to rename folder.");
+            return;
+        }
+
+        // Delete the folder
+        boolean deleted = newFolder.delete();
+        if (deleted) {
+            System.out.println("Folder deleted successfully.");
+        } else {
+            System.out.println("Failed to delete folder.");
+        }
+    }
+}
+
+
+Day-13
+
+
+1. Write a program to copy one file to other file using:
+1) Character by character
+2) Word by word
+3) Line by line
+
+
+1)	Character by character
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class CopyFileCharacterByCharacter {
+    public static void main(String[] args) {
+        try (FileReader reader = new FileReader("source.txt");
+             FileWriter writer = new FileWriter("destination_character.txt")) {
+
+            int character;
+            while ((character = reader.read()) != -1) {
+                writer.write(character);
+            }
+            System.out.println("File copied character by character successfully.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+2)	Word by word
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class CopyFileWordByWord {
+    public static void main(String[] args) {
+        try (Scanner scanner = new Scanner(new FileReader("source.txt"));
+             FileWriter writer = new FileWriter("destination_word.txt")) {
+
+            while (scanner.hasNext()) {
+                String word = scanner.next();
+                writer.write(word + " ");
+            }
+            System.out.println("File copied word by word successfully.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+3) Line by line
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class CopyFileLineByLine {
+    public static void main(String[] args) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("source.txt"));
+             FileWriter writer = new FileWriter("destination_line.txt")) {
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                writer.write(line + "\n");
+            }
+            System.out.println("File copied line by line successfully.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+2. Write the program to marge two files in to third file using any of the above approaches.
+
+
+1.	Character by character
+
+import java.io.*;
+
+public class MergeFilesCharacterByCharacter {
+    public static void main(String[] args) {
+        try (FileReader reader1 = new FileReader("file1.txt");
+             FileReader reader2 = new FileReader("file2.txt");
+             FileWriter writer = new FileWriter("merged_character.txt")) {
+
+            int character;
+            while ((character = reader1.read()) != -1) {
+                writer.write(character);
+            }
+
+            while ((character = reader2.read()) != -1) {
+                writer.write(character);
+            }
+
+            System.out.println("Files merged character by character successfully.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+
+ 
+2.	Word by word
+
+import java.io.*;
+import java.util.Scanner;
+
+public class MergeFilesWordByWord {
+    public static void main(String[] args) {
+        try (Scanner scanner1 = new Scanner(new FileReader("file1.txt"));
+             Scanner scanner2 = new Scanner(new FileReader("file2.txt"));
+             FileWriter writer = new FileWriter("merged_word.txt")) {
+
+            while (scanner1.hasNext()) {
+                String word = scanner1.next();
+                writer.write(word + " ");
+            }
+
+            while (scanner2.hasNext()) {
+                String word = scanner2.next();
+                writer.write(word + " ");
+            }
+
+            System.out.println("Files merged word by word successfully.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+ 
+
+3.	 Line by line
+
+import java.io.*;
+
+public class MergeFilesLineByLine {
+    public static void main(String[] args) {
+        try (BufferedReader reader1 = new BufferedReader(new FileReader("file1.txt"));
+             BufferedReader reader2 = new BufferedReader(new FileReader("file2.txt"));
+             FileWriter writer = new FileWriter("merged_line.txt")) {
+
+            String line;
+            while ((line = reader1.readLine()) != null) {
+                writer.write(line + "\n");
+            }
+
+            while ((line = reader2.readLine()) != null) {
+                writer.write(line + "\n");
+            }
+
+            System.out.println("Files merged line by line successfully.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+Day-14
+
+
+
+1.	Create Student class(Id,name,age). Put appropriate constructor to initialize all the data member of the
+class. Write 5 objects to the file. Id of the student must be 1,2,3,4 and 5. User will provide the Id of
+the student, and your program will display the information of that student.
+
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+class Student implements Serializable {
+    private static final long serialVersionUID = 1L;
+    private int id;
+    private String name;
+    private int age;
+
+    // Constructor
+    public Student(int id, String name, int age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
+
+    // Getters
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create a list of students
+        List<Student> students = new ArrayList<>();
+        students.add(new Student(1, "Alice", 20));
+        students.add(new Student(2, "Bob", 21));
+        students.add(new Student(3, "Charlie", 22));
+        students.add(new Student(4, "David", 23));
+        students.add(new Student(5, "Eve", 24));
+
+        // Write objects to file
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("students.dat"))) {
+            for (Student student : students) {
+                oos.writeObject(student);
+            }
+            System.out.println("Objects written to file successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Retrieve information of a specific student by ID
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("students.dat"));
+             Scanner scanner = new Scanner(System.in)) {
+
+            System.out.print("Enter the ID of the student: ");
+            int id = scanner.nextInt();
+            boolean found = false;
+
+            while (true) {
+                try {
+                    Student student = (Student) ois.readObject();
+                    if (student.getId() == id) {
+                        System.out.println("Student found:");
+                        System.out.println("ID: " + student.getId());
+                        System.out.println("Name: " + student.getName());
+                        System.out.println("Age: " + student.getAge());
+                        found = true;
+                        break;
+                    }
+                } catch (EOFException e) {
+                    break;
+                }
+            }
+
+            if (!found) {
+                System.out.println("Student with ID " + id + " not found.");
+            }
+
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+
+Day-15
+
+
+2.	Create Student class(Id,name,age). Put appropriate constructor to initialize all the data member of the
+class. Write 5 objects to the file. Id of the student must be 1,2,3,4 and 5. User will provide the Id of
+the student, and your program will display the information of that student.
+
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Main {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Event Handling Example");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(300, 200);
+        frame.setLayout(new FlowLayout());
+
+        JButton button = new JButton("Click Me");
+
+        // Registering listeners
+        frame.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                System.out.println("Mouse Clicked on JFrame");
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {}
+
+            @Override
+            public void mouseReleased(MouseEvent e) {}
+
+            @Override
+            public void mouseEntered(MouseEvent e) {}
+
+            @Override
+            public void mouseExited(MouseEvent e) {}
+        });
+
+        frame.addMouseMotionListener(new MouseMotionListener() {
+            @Override
+            public void mouseDragged(MouseEvent e) {}
+
+            @Override
+            public void mouseMoved(MouseEvent e) {
+                System.out.println("Mouse Moved on JFrame");
+            }
+        });
+
+        frame.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {}
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                System.out.println("Key Pressed on JFrame: " + e.getKeyChar());
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {}
+        });
+
+        frame.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {}
+
+            @Override
+            public void windowClosing(WindowEvent e) {
+                System.out.println("Window Closing");
+            }
+
+            @Override
+            public void windowClosed(WindowEvent e) {}
+
+            @Override
+            public void windowIconified(WindowEvent e) {}
+
+            @Override
+            public void windowDeiconified(WindowEvent e) {}
+
+            @Override
+            public void windowActivated(WindowEvent e) {}
+
+            @Override
+            public void windowDeactivated(WindowEvent e) {}
+        });
+
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Button Clicked");
+            }
+        });
+
+        frame.add(button);
+        frame.setVisible(true);
+    }
+}
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Day-16
+
+
+1.	Demonstrate the use of FlowLayout, BorderLayout, GridLayout, GridBagLayout & CardLayout.
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class LayoutManagerDemo {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Layout Manager Demo");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 300);
+
+        // FlowLayout
+        JPanel flowLayoutPanel = new JPanel(new FlowLayout());
+        flowLayoutPanel.add(new JButton("Button 1"));
+        flowLayoutPanel.add(new JButton("Button 2"));
+        flowLayoutPanel.add(new JButton("Button 3"));
+        frame.add(flowLayoutPanel, BorderLayout.NORTH);
+
+        // BorderLayout
+        JPanel borderLayoutPanel = new JPanel(new BorderLayout());
+        borderLayoutPanel.add(new JButton("Button 4 (North)"), BorderLayout.NORTH);
+        borderLayoutPanel.add(new JButton("Button 5 (Center)"), BorderLayout.CENTER);
+        borderLayoutPanel.add(new JButton("Button 6 (South)"), BorderLayout.SOUTH);
+        frame.add(borderLayoutPanel, BorderLayout.CENTER);
+
+        // GridLayout
+        JPanel gridLayoutPanel = new JPanel(new GridLayout(2, 3));
+        gridLayoutPanel.add(new JButton("Button 7"));
+        gridLayoutPanel.add(new JButton("Button 8"));
+        gridLayoutPanel.add(new JButton("Button 9"));
+        gridLayoutPanel.add(new JButton("Button 10"));
+        gridLayoutPanel.add(new JButton("Button 11"));
+        gridLayoutPanel.add(new JButton("Button 12"));
+        frame.add(gridLayoutPanel, BorderLayout.SOUTH);
+
+        // GridBagLayout
+        JPanel gridBagLayoutPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.insets = new Insets(5, 5, 5, 5);
+        gridBagLayoutPanel.add(new JButton("Button 13"), gbc);
+        gbc.gridx = 1;
+        gridBagLayoutPanel.add(new JButton("Button 14"), gbc);
+        gbc.gridy = 1;
+        gbc.gridx = 0;
+        gridBagLayoutPanel.add(new JButton("Button 15"), gbc);
+        gbc.gridx = 1;
+        gridBagLayoutPanel.add(new JButton("Button 16"), gbc);
+        frame.add(gridBagLayoutPanel, BorderLayout.EAST);
+
+        // CardLayout
+        JPanel cardLayoutPanel = new JPanel(new CardLayout());
+        JButton card1 = new JButton("Card 1");
+        JButton card2 = new JButton("Card 2");
+        JButton card3 = new JButton("Card 3");
+        cardLayoutPanel.add(card1, "card1");
+        cardLayoutPanel.add(card2, "card2");
+        cardLayoutPanel.add(card3, "card3");
+
+        Timer timer = new Timer(1000, new ActionListener() {
+            int count = 1;
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CardLayout layout = (CardLayout) cardLayoutPanel.getLayout();
+                layout.show(cardLayoutPanel, "card" + (count % 3 + 1));
+                count++;
+            }
+        });
+        timer.start();
+        frame.add(cardLayoutPanel, BorderLayout.WEST);
+
+        frame.setVisible(true);
+    }
+}
+
+2.   Demonstrate working of JTextField, JTextArea with event handling.
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class TextFieldAndTextAreaDemo extends JFrame implements ActionListener {
+    JTextField textField;
+    JTextArea textArea;
+
+    public TextFieldAndTextAreaDemo() {
+        setTitle("TextField and TextArea Demo");
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Create a panel to hold components
+        JPanel panel = new JPanel();
+        panel.setLayout(new BorderLayout());
+
+        // Create a text field
+        textField = new JTextField(20);
+        textField.addActionListener(this); // Register ActionListener
+        panel.add(textField, BorderLayout.NORTH);
+
+        // Create a text area
+        textArea = new JTextArea();
+        JScrollPane scrollPane = new JScrollPane(textArea);
+        panel.add(scrollPane, BorderLayout.CENTER);
+
+        // Add panel to the frame
+        add(panel);
+
+        setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // Get the text from the text field and append it to the text area
+        String text = textField.getText();
+        textArea.append(text + "\n");
+
+        // Clear the text field
+        textField.setText("");
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> new TextFieldAndTextAreaDemo());
+    }
+}
+ 
+
+Day-17
+
+
+1.	Create GUI based application for storing student’s information like (id,name,age,email,sem). Do the
+validation for valid email address. Form must have Submit and Clear button. On clicking on Submit
+button, all the information filled must be displayed by appropriate dialog box.
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class StudentInformationApp extends JFrame implements ActionListener {
+    JTextField idField, nameField, ageField, emailField, semField;
+
+    public StudentInformationApp() {
+        setTitle("Student Information App");
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(6, 2, 5, 5));
+
+        panel.add(new JLabel("ID:"));
+        idField = new JTextField();
+        panel.add(idField);
+
+        panel.add(new JLabel("Name:"));
+        nameField = new JTextField();
+        panel.add(nameField);
+
+        panel.add(new JLabel("Age:"));
+        ageField = new JTextField();
+        panel.add(ageField);
+
+        panel.add(new JLabel("Email:"));
+        emailField = new JTextField();
+        panel.add(emailField);
+
+        panel.add(new JLabel("Semester:"));
+        semField = new JTextField();
+        panel.add(semField);
+
+        JButton submitButton = new JButton("Submit");
+        submitButton.addActionListener(this);
+        panel.add(submitButton);
+
+        JButton clearButton = new JButton("Clear");
+        clearButton.addActionListener(this);
+        panel.add(clearButton);
+
+        add(panel);
+        setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getActionCommand().equals("Submit")) {
+            if (validateEmail()) {
+                String id = idField.getText();
+                String name = nameField.getText();
+                String age = ageField.getText();
+                String email = emailField.getText();
+                String sem = semField.getText();
+
+                String message = "Student Information:\n"
+                        + "ID: " + id + "\n"
+                        + "Name: " + name + "\n"
+                        + "Age: " + age + "\n"
+                        + "Email: " + email + "\n"
+                        + "Semester: " + sem;
+
+                JOptionPane.showMessageDialog(this, message, "Student Information", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Invalid email address!", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } else if (e.getActionCommand().equals("Clear")) {
+            clearFields();
+        }
+    }
+
+    private boolean validateEmail() {
+        String email = emailField.getText();
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+
+        Pattern pattern = Pattern.compile(emailRegex);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
+    private void clearFields() {
+        idField.setText("");
+        nameField.setText("");
+        ageField.setText("");
+        emailField.setText("");
+        semField.setText("");
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(StudentInformationApp::new);
+    }
+}   
+
+
+ 
+
+2.   Demonstrate working Convert the above program with following menus:
+a. Operations : New, Close, Exit
+b. Help: About Application
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class StudentInformationAppWithMenus extends JFrame implements ActionListener {
+    JTextField idField, nameField, ageField, emailField, semField;
+
+    public StudentInformationAppWithMenus() {
+        setTitle("Student Information App");
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JMenuBar menuBar = new JMenuBar();
+        setJMenuBar(menuBar);
+
+        JMenu operationsMenu = new JMenu("Operations");
+        menuBar.add(operationsMenu);
+
+        JMenuItem newMenuItem = new JMenuItem("New");
+        newMenuItem.addActionListener(this);
+        operationsMenu.add(newMenuItem);
+
+        JMenuItem closeMenuItem = new JMenuItem("Close");
+        closeMenuItem.addActionListener(this);
+        operationsMenu.add(closeMenuItem);
+
+        JMenuItem exitMenuItem = new JMenuItem("Exit");
+        exitMenuItem.addActionListener(this);
+        operationsMenu.add(exitMenuItem);
+
+        JMenu helpMenu = new JMenu("Help");
+        menuBar.add(helpMenu);
+
+        JMenuItem aboutMenuItem = new JMenuItem("About Application");
+        aboutMenuItem.addActionListener(this);
+        helpMenu.add(aboutMenuItem);
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(6, 2, 5, 5));
+
+        panel.add(new JLabel("ID:"));
+        idField = new JTextField();
+        panel.add(idField);
+
+        panel.add(new JLabel("Name:"));
+        nameField = new JTextField();
+        panel.add(nameField);
+
+        panel.add(new JLabel("Age:"));
+        ageField = new JTextField();
+        panel.add(ageField);
+
+        panel.add(new JLabel("Email:"));
+        emailField = new JTextField();
+        panel.add(emailField);
+
+        panel.add(new JLabel("Semester:"));
+        semField = new JTextField();
+        panel.add(semField);
+
+        add(panel);
+        setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String command = e.getActionCommand();
+
+        switch (command) {
+            case "New":
+                clearFields();
+                break;
+            case "Close":
+                dispose();
+                break;
+            case "Exit":
+                System.exit(0);
+                break;
+            case "About Application":
+                JOptionPane.showMessageDialog(this, "Student Information App\nVersion 1.0\nDeveloped by Your Name",
+                        "About", JOptionPane.INFORMATION_MESSAGE);
+                break;
+        }
+    }
+
+    private void clearFields() {
+        idField.setText("");
+        nameField.setText("");
+        ageField.setText("");
+        emailField.setText("");
+        semField.setText("");
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(StudentInformationAppWithMenus::new);
+    }
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+				GUI
+----------------------------------------------------------------------------------------------------------------------------------------------------
+PASSWORD
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+class Password1 extends JFrame implements ActionListener{
+    Label l1 = new Label("Password");
+    JPasswordField p1 = new JPasswordField(20);
+    Button b1= new Button("Click here");
+
+    Password1(){
+        setLayout(new FlowLayout());
+        add(l1);
+        add(p1);
+        add(b1);
+
+        b1.addActionListener(this);
+        setVisible(true);
+        setSize(400,500);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+    public void actionPerformed(ActionEvent e){
+        String str = (new String(p1.getPassword()));
+        System.out.println("Password is "+str);
+        if(str.length()>10){
+            System.out.println("Invalid");
+        }
+        else{
+            System.out.println("Valid");
+        }
+    }
+    public static void main(String[] args){
+        Password1 obj = new Password1();
+        
+    }
+}
+
+
+RADIO & CHECK BOX
+
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+class RadioCheckBox extends JFrame{
+    JCheckBox c1 = new JCheckBox("Cricket");
+    JCheckBox c2 = new JCheckBox("Tennis");
+    JCheckBox c3 = new JCheckBox("Football");
+    JCheckBox c4 = new JCheckBox("Baseball");
+
+    JRadioButton r1 = new JRadioButton("Male");
+    JRadioButton r2 = new JRadioButton("Female");
+    JRadioButton r3 = new JRadioButton("Others");
+    ButtonGroup gb = new ButtonGroup();
+
+    // JComboBox<String> cb = new JComboBox<>();
+    // JPanel p1 = new JPanel();
+
+    RadioCheckBox(){
+        setLayout(new FlowLayout());
+        add(c1);
+        add(c2);
+        add(c3);
+        add(c4);
+        add(r1);
+        add(r2);
+        add(r3);
+        gb.add(r1);
+        gb.add(r2);
+        gb.add(r3);
+
+        // cb.addItem("Rose");
+        // cb.addItem("Lilly");
+        // cb.addItem("Orchid");
+        // cb.addItem("Lotus");
+        // add(cb);
+        // cb.addActionListener(this);
+
+        setLayout(new FlowLayout());
+        setVisible(true);
+        setSize(400,400);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+    // public void actionPerformed(ActionEvent e){
+    //     Object str;
+        // JRadioButton rd = gb.getSelection();
+    //     str=cb.getSelectedItem();
+    //     System.out.println(str);
+    // }
+    public static void main(String[] args){
+        // new RadioCheckBox();
+
+        RadioCheckBox obj = new RadioCheckBox();
+    }
+}
+
+
+REGISTATION FORM
+
+// login Form
+// username
+// password
+// submit
+
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+class RegForm extends JFrame implements ActionListener{
+    Label l1 = new Label("First Name: ");
+    Label l2 = new Label("Middle Name: ");
+    Label l3 = new Label("Last Name: ");
+    Label l4 = new Label("Contact No.: ");
+    Label l5 = new Label("Gender: ");
+    Label l6 = new Label("Hobby: ");
+    Label l7 = new Label("City: ");
+
+    JTextField p1 = new JTextField(20);
+    JTextField p2 = new JTextField(20);
+    JTextField p3 = new JTextField(20);
+    JTextField p4 = new JTextField(20);
+
+    JRadioButton r1 = new JRadioButton("Male");
+    JRadioButton r2 = new JRadioButton("Female");
+    JRadioButton r3 = new JRadioButton("Others");
+    ButtonGroup gb = new ButtonGroup();
+
+    JCheckBox c1 = new JCheckBox("Singing");
+    JCheckBox c2 = new JCheckBox("Dancing");
+    JCheckBox c3 = new JCheckBox("Music");
+
+    Button b1 = new Button("Submit");
+    Frame f = new Frame();
+
+    JComboBox<String> cb = new JComboBox<>();
+    JPanel m1 = new JPanel();
+
+    RegForm(){
+        // setLayout(new FlowLayout());
+        setLayout(new GridBagLayout());
+        GridBagConstraints g = new GridBagConstraints();
+        g.gridx=0;
+        g.gridy=2;
+        add(l1,g);
+        g.gridx=2;
+        g.gridy=2;
+        add(p1,g);
+        g.gridx=0;
+        g.gridy=4;
+        add(l2,g);
+        g.gridx=2;
+        g.gridy=4;
+        add(p2,g);
+        g.gridx=0;
+        g.gridy=6;
+        add(l3,g);
+        g.gridx=2;
+        g.gridy=6;
+        add(p3,g);
+        g.gridx=0;
+        g.gridy=8;
+        add(l4,g);
+        g.gridx=2;
+        g.gridy=8;
+        add(p4,g);
+        g.gridx=0;
+        g.gridy=10;
+        add(l5,g);
+        g.gridx=2;
+        g.gridy=10;
+        add(r1,g);
+        g.gridx=0;
+        g.gridy=10;
+        add(r2,g);
+        g.gridx=2;
+        g.gridy=10;
+        add(r3,g);
+        g.gridx=0;
+        g.gridy=6;
+        gb.add(r1,g);
+        g.gridx=2;
+        g.gridy=6;
+        gb.add(r2,g);
+        g.gridx=4;
+        g.gridy=6;
+        gb.add(r3,g);
+        g.gridx=2;
+        g.gridy=6;
+        add(l6,g);
+        g.gridx=2;
+        g.gridy=6;
+        add(c1,g);
+        g.gridx=2;
+        g.gridy=6;
+        add(c2,g);
+        g.gridx=2;
+        g.gridy=6;
+        add(c3,g);
+        g.gridx=2;
+        g.gridy=6;
+        add(l7,g);
+        g.gridx=2;
+        g.gridy=6;
+        cb.addItem("Ahmedabad");
+        cb.addItem("Rajkot");
+        cb.addItem("Bhavnagar");
+        cb.addItem("Vadodara");
+        add(cb,g);
+        g.gridx=2;
+        g.gridy=11;
+        add(b1,g);
+
+        b1.addActionListener(this);
+        setVisible(true);
+        setSize(400,400);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public void actionPerformed(ActionEvent e){
+         Object str;
+        JOptionPane.showMessageDialog(f,"Your Form has been Submitted successfully");
+    }
+
+    public static void main(String[] args){
+        RegForm obj = new RegForm();
+    }
+}
+
+
+WINDOW LISTENER
+
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+class WindowListener1 implements WindowListener{
+    JFrame f = new JFrame("Window Listener");
+    // TextField t1 = new TextField(50);
+
+    WindowListener1(){
+        f.setLayout(null);
+        // t1.setBounds(30,100,50,30);
+        // f.add(t1);
+        f.setVisible(true);
+        f.setSize(400,400);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.addWindowListener(this);
+    }
+
+    public void windowOpened(WindowEvent e){
+        System.out.println("Window is open");
+    }
+    public void windowClosed(WindowEvent e){
+        System.out.println("Window is closed");
+    }
+    public void windowClosing(WindowEvent e){
+        System.out.println("Window is closing");
+    }
+    public void windowActivated(WindowEvent e){
+        System.out.println("Window is active");
+    }
+    public void windowDeactivated(WindowEvent e){
+        System.out.println("Window is deactive");
+    }
+    public void windowIconified(WindowEvent e){
+        System.out.println("Window is minimize");
+    }
+    public void windowDeiconified(WindowEvent e){
+        System.out.println("Window is maximize");
+    }
+
+    public static void main(String[] args){
+        WindowListener1 obj = new WindowListener1();
+    }
+}
+
+DIALOG BOX
+
+import java.awt.event.*;
+import java.awt.*;
+import javax.swing.*;
+
+class Dialogbox2 extends JFrame implements ActionListener{
+    Button b1 = new Button("Click here");
+    Frame f = new Frame();
+
+    Dialogbox2(){
+        setLayout(new FlowLayout());
+        add(b1);
+        b1.addActionListener(this);
+        setVisible(true);
+        setSize(400,400);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+    public void actionPerformed(ActionEvent e){
+        JOptionPane.showMessageDialog(f,"This is a dialog box");
+    }
+    public static void main(String[] args){
+        Dialogbox2 obj = new Dialogbox2();
+    }
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+LIST/HASHMAP/STACK
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+LIST 
+
+import java.util.*;
+class book
+{	
+	int no;
+	String name;
+	book(int no,String name)
+	{
+		this.no=no;
+		this.name=name;
+	}
+	void b1()
+	{
+		System.out.println("Book no is "+no+" and book name is "+name);
+	}
+	public static void main(String s[])
+	{
+		book ob1 = new book(1,"Bhagvat Gita");
+		//ob1.b1();
+		book ob2 = new book(2,"Mahabharat");
+		book ob3 = new book(3,"Ramayan");
+		List<book> ob = new ArrayList<>();
+		
+		ob.add(ob1);
+		ob.add(ob2);
+		ob.add(ob3);
+	
+		for(book b:ob)
+		{
+			System.out.println("Book no is "+b.no+" and book name is "+b.name);
+		}
+		
+		
+	}
+}
+
+HASHMAP
+
+import java.util.*;
+class hashmap
+{
+	public static void main(String s[])
+	{
+		HashMap<Integer,String> ob = new HashMap<>();
+		
+		ob.put(1,"Bhagvatgita");
+		ob.put(2,"Ramayan");
+		ob.put(3,"Krishna");
+		
+		System.out.println("Book name is :- "+ob);
+		System.out.println("Size is:- "+ob.size());
+		//System.out.println("Book index is :- "+ob.getkey(Ramayan));
+		
+		for(int i=1;i<=3;i++)
+		{
+			System.out.println("List:- "+ob.get(i));
+		}
+	}
+}
+
+STACK
+
+import java.util.*;
+class stack
+{
+	public static void main(String s[])
+	{
+		Stack<String> ob = new Stack<>();
+		
+		ob.push("Bhagvatgita");
+		ob.push("Ramayan");
+		ob.push("Krishna");
+		
+		System.out.println("Book name is :- "+ob);
+		System.out.println("Top element "+ob.peek());
+		System.out.println("Search Ramayan "+ob.search("Ramayan"));
+		System.out.println("Deleate element is "+ob.pop());
+		System.out.println("Book name is :- "+ob);	
+		System.out.println("Book name is :- "+ob.remove(1));
+		System.out.println("Book name is :- "+ob);
+	}
+}
+
+VECTOR
+
+import java.util.*;
+
+public class Vector1 {
+    int id,age;
+    String name;
+
+    Vector1(int id, int age,String name){
+        this.age=age;
+        this.name=name;
+        this.id=id;
+    }
+
+    void get(){
+        System.out.println("Name "+name+"Age "+age+"id "+id);
+    }
+    public static void main(String[] args){
+        Vector<Vector1> obj = new Vector<>();
+
+        Vector1 obj1 = new Vector1(101,20,"Mohit");
+        Vector1 obj2 = new Vector1(102,50,"Maulik");
+        Vector1 obj3 = new Vector1(103,40,"Hit");
+        Vector1 obj4 = new Vector1(104,30,"Ketan");
+        Vector1 obj5 = new Vector1(105,90,"Mahila");
+
+        obj.add(obj1);
+        obj.add(obj2);
+        obj.add(obj3);
+        obj.add(obj4);
+        obj.add(obj5);
+
+        Enumeration<Vector1> e = obj.elements();//
+
+        while(e.hasMoreElements()){
+            Vector1 s = e.nextElement();//
+        }
+
+        for(Vector1 s:obj){
+            System.out.print("Id: " + s.id+", "); //
+            System.out.print("Name: " + s.name+", "); //
+            System.out.print("Age: " + s.age+"\n"); //
+        }
+    }
+}
+-------------------------------------------------------------
+FILE PIC TO PIC
+
+import java.io.*;
+class Png1{
+    public static void main(String[] args) throws IOException{
+        FileInputStream r = new FileInputStream("p1.png");
+        FileOutputStream w = new FileOutputStream("p2.png");
+
+        int i;
+        while((i=r.read())!=-1){
+            w.write(i);
+        }
+        w.close();
+        r.close();
+    }
+}
+---------------------------------------------------------------
+
+BUTTON THREAD
+
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+class ButtonThread extends JFrame implements ActionListener, Runnable{
+
+    Button b1 = new Button("Press to Get");
+    Frame f = new Frame();
+
+    ButtonThread(){
+        setLayout(new FlowLayout());
+        add(b1);
+        b1.addActionListener(this);
+        setVisible(true);
+        setSize(400,400);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public void run(){
+    }
+
+    public void actionPerformed(ActionEvent e){
+        int a=0,b=1,c;
+		for(int i=0;i<=10;i++){
+			c=a+b;
+			System.out.print(c+" ");
+			a=b;
+			b=c;
+		}
+    }
+
+    public static void main(String[] args){
+        ButtonThread obj1 = new ButtonThread();
+        Thread t = new Thread(obj1);
+        t.start();
+    }
+}
+
+------------------------------------------------------------------
+
+EXCEPTION
+
+import java.util.*;
+
+class Checkage extends Exception{
+    Checkage(String str){
+        super(str);
+    }
+}
+
+class Excep2{
+
+    public static void main(String[] args){
+        int age;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter the age: ");
+        age=s.nextInt();
+         try{
+            if(age<18){
+                throw new Checkage("Not allowed for voting");
+            }
+            else{
+                System.out.println("Allowed for voting");
+            }
+        }
+        catch(Checkage e){
+            System.out.println(e);
+        }
+    }
+}
+
+--------------------
+
+import java.util.*;
+
+class Checknum extends Exception{
+    Checknum(String str){
+        super(str);
+    }
+}
+
+class Excep3{
+
+    public static void main(String[] args){
+        int n;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter the number: ");
+        n=s.nextInt();
+         try{
+            if(n>100){
+                throw new Checknum("Not allowed");
+            }
+            else{
+                System.out.println("Allowed");
+            }
+        }
+        catch(Checknum e){
+            System.out.println(e);
+        }
+    }
+}
+-----------
+class Check extends Exception{
+    Check(String str){
+        super(str);
+    }
+}
+class Pattern{ 
+    static int no=6;
+   public static void main(String[] args){
+    try{
+            if(no<5){
+                throw new Check("number is  valid");
+            }
+            else{
+                System.out.println("not valid  pattern");
+            }
+        }
+        catch(Check e){
+            for(int i=0;i<=no;i++){
+                for(int j=0;j<i;j++){
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+            System.out.println(no);
+        }
+
+    }
+}
+--------------------------------------
+
+SYNCHRONIZED
+
+class A1{
+    synchronized void table(int n){
+        for(int i=1;i<=10;i++){
+            System.out.println(n+"*"+i+"="+(n*i));
+        }
+    }
+}
+
+class thread1 extends Thread{
+    A1 a;
+    thread1(A1 a){
+        this.a=a;
+    }
+    public void run(){
+        a.table(5);
+    }
+}
+
+class thread2 extends Thread{
+    A1 a;
+    thread2(A1 a){
+        this.a=a;
+    }
+    public void run(){
+        a.table(10);
+    }
+}
+
+class Synchronized1{
+    public static void main(String[] args){
+        A1 obj = new A1();
+        thread1 t1 = new thread1(obj);
+        thread2 t2 = new thread2(obj);
+
+        t1.start();
+        t2.start();
+    }
+}
+
+--------------------------------------------------------------------------------------------------
+
+THREAD
+
+public class Thread4 extends Thread {
+    public void run() {
+        int f = 5;
+        int i, j, k;
+        for (i = 1; i <= f; i++) {
+            for (k = 0; k <= f - i; k++) {
+                System.out.print("  ");
+            }
+            for (j = 1; j <= i; j++) {
+                System.out.print(j + " ");
+            }
+            for (j = i - 1; j >= 1; j--) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        Thread4 obj1 = new Thread4();
+        Thread t = new Thread(obj1);
+        t.start();
+    }
+}
+---------------
+class Counter {
+    public void t1() {
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("i value " + i);
+        }
+    }
+
+    class Thread1 extends Thread {
+        Counter c;
+
+        Thread1(Counter c) {
+            this.c = c;
+        }
+
+        public void run() {
+            c.t1();
+        }
+    }
+
+    class Thread2 extends Thread {
+        Counter c;
+
+        Thread2(Counter c) {
+            this.c = c;
+        }
+
+        public void run() {
+            c.t1();
+        }
+    }
+
+    class Thread5{
+    public static void main(String[] args) {
+        Counter c1 = new Counter();
+        Counter c2 = new Counter();
+        
+        Thread1 obj1 = c1.new Thread1(c1);
+        Thread2 obj2 = c2.new Thread2(c2);
+
+        obj1.start();
+        obj2.start();
+    }
+    }
+}
+-----------------------
+public class Thread6 extends Thread {
+    public void run() {
+        int rows = 3; // Number of rows for the pyramid
+        int midRow = (rows + 1) / 2;
+
+        for (int i = 1; i <= rows; i++) {
+            // Printing spaces before numbers
+            for (int k = 1; k <= Math.abs(midRow - i); k++) {
+                System.out.print("   ");
+            }
+
+            // Printing decreasing numbers
+            for (int j = i; j >= 1; j--) {
+                System.out.print(j + " ");
+            }
+
+            // Printing increasing numbers, skipping the first one
+            for (int j = 2; j <= i; j++) {
+                System.out.print(j + " ");
+            }
+
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        Thread6 obj1 = new Thread6();
+        Thread t = new Thread(obj1);
+        t.start();
+    }
+}
+----------------------------------------------------------------------------------------------------
+
+
+create following classes /interface: with following  functionality:
+(1)  Interface book(getdetils(),showdetiles());
+(2) hindi_book(book_name,book_price,book_type), - basic class implement book interface.
+(3) English_book(releasing_year)- chiled  class addgetdetils and showdetiles functions all classes. in java
+
+// Define the Book interface
+interface Book {
+    void getDetails();
+    void showDetails();
+}
+
+// Define the basic class implementing the Book interface
+class HindiBook implements Book {
+    private String bookName;
+    private double bookPrice;
+    private String bookType;
+
+    public HindiBook(String bookName, double bookPrice, String bookType) {
+        this.bookName = bookName;
+        this.bookPrice = bookPrice;
+        this.bookType = bookType;
+    }
+
+    public void getDetails() {
+        System.out.println("Name: " + bookName + ", Price: " + bookPrice + ", Type: " + bookType);
+    }
+
+    public void showDetails() {
+        getDetails();
+    }
+}
+
+// Define the child class EnglishBook inheriting from HindiBook
+class EnglishBook extends HindiBook {
+    private int releasingYear;
+
+    public EnglishBook(String bookName, double bookPrice, String bookType, int releasingYear) {
+        super(bookName, bookPrice, bookType);
+        this.releasingYear = releasingYear;
+    }
+
+    @Override
+    public void getDetails() {
+        super.getDetails();
+        System.out.println("Releasing Year: " + releasingYear);
+    }
+
+    @Override
+    public void showDetails() {
+        getDetails();
+    }
+}
+
+// Main class for testing
+public class Main {
+    public static void main(String[] args) {
+        // Creating HindiBook object
+        HindiBook hindiBook = new HindiBook("Hindi Book", 100, "Fiction");
+        hindiBook.showDetails();
+
+        // Creating EnglishBook object
+        EnglishBook englishBook = new EnglishBook("English Book", 150, "Non-fiction", 2023);
+        englishBook.showDetails();
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+create GUI to get the information about book .press button display all details of book in java
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+class Book {
+    private String name;
+    private double price;
+    private String type;
+
+    public Book(String name, double price, String type) {
+        this.name = name;
+        this.price = price;
+        this.type = type;
+    }
+
+    public String getDetails() {
+        return "Name: " + name + "\nPrice: " + price + "\nType: " + type;
+    }
+}
+
+class BookGUI extends JFrame {
+    private JTextField nameField;
+    private JTextField priceField;
+    private JTextField typeField;
+    private JTextArea detailsArea;
+
+    public BookGUI() {
+        setTitle("Book Details");
+        setSize(400, 300);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(4, 2));
+
+        panel.add(new JLabel("Name:"));
+        nameField = new JTextField();
+        panel.add(nameField);
+
+        panel.add(new JLabel("Price:"));
+        priceField = new JTextField();
+        panel.add(priceField);
+
+        panel.add(new JLabel("Type:"));
+        typeField = new JTextField();
+        panel.add(typeField);
+
+        JButton displayButton = new JButton("Display Details");
+        displayButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String name = nameField.getText();
+                double price = Double.parseDouble(priceField.getText());
+                String type = typeField.getText();
+
+                Book book = new Book(name, price, type);
+                detailsArea.setText(book.getDetails());
+            }
+        });
+        panel.add(displayButton);
+
+        detailsArea = new JTextArea();
+        panel.add(detailsArea);
+
+        getContentPane().add(panel);
+        setVisible(true);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new BookGUI();
+            }
+        });
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+1. Create Following Classes:
+
+1) Employee(Id, Name, Age,Working hours, salary) - Base Class, Abstract class
+2) Developer (Technology, Experience) - Child Class of Employee Technology(eg.Java, Python)
+3) SEO (Stragegy(eg.on-page SEO, Off-page SEO, Technical SEO), Qualification )- Child Class of Employee
+Add default and parameterized constructors in all the three classes.
+Add show Details functions in all three classes
+
+
+// Abstract base class Employee
+abstract class Employee {
+    protected int id;
+    protected String name;
+    protected int age;
+    protected int workingHours;
+    protected double salary;
+
+    // Parameterized constructor
+    public Employee(int id, String name, int age, int workingHours, double salary) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.workingHours = workingHours;
+        this.salary = salary;
+    }
+
+    // Default constructor
+    public Employee() {
+        // Default values
+        this.id = 0;
+        this.name = "";
+        this.age = 0;
+        this.workingHours = 0;
+        this.salary = 0.0;
+    }
+
+    // Abstract method to show details
+    public abstract void showDetails();
+}
+
+// Developer class, a child class of Employee
+class Developer extends Employee {
+    private String technology;
+    private int experience;
+
+    // Parameterized constructor
+    public Developer(int id, String name, int age, int workingHours, double salary, String technology, int experience) {
+        super(id, name, age, workingHours, salary);
+        this.technology = technology;
+        this.experience = experience;
+    }
+
+    // Default constructor
+    public Developer() {
+        super();
+        this.technology = "";
+        this.experience = 0;
+    }
+
+    // Overriding method to show details
+    @Override
+    public void showDetails() {
+        System.out.println("Employee Type: Developer");
+        System.out.println("Id: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Working Hours: " + workingHours);
+        System.out.println("Salary: " + salary);
+        System.out.println("Technology: " + technology);
+        System.out.println("Experience: " + experience);
+    }
+}
+
+// SEO class, a child class of Employee
+class SEO extends Employee {
+    private String strategy;
+    private String qualification;
+
+    // Parameterized constructor
+    public SEO(int id, String name, int age, int workingHours, double salary, String strategy, String qualification) {
+        super(id, name, age, workingHours, salary);
+        this.strategy = strategy;
+        this.qualification = qualification;
+    }
+
+    // Default constructor
+    public SEO() {
+        super();
+        this.strategy = "";
+        this.qualification = "";
+    }
+
+    // Overriding method to show details
+    @Override
+    public void showDetails() {
+        System.out.println("Employee Type: SEO");
+        System.out.println("Id: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Working Hours: " + workingHours);
+        System.out.println("Salary: " + salary);
+        System.out.println("Strategy: " + strategy);
+        System.out.println("Qualification: " + qualification);
+    }
+}
+
+// Main class to test the classes
+public class Main {
+    public static void main(String[] args) {
+        // Creating Developer object and showing details
+        Developer developer = new Developer(101, "John", 30, 40, 5000, "Java", 5);
+        developer.showDetails();
+
+        // Creating SEO object and showing details
+        SEO seo = new SEO(201, "Emily", 28, 35, 4500, "On-page SEO", "Marketing degree");
+        seo.showDetails();
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Create GUI based application to take 3 input from textBox and show message in dialogBox on submit.
+Fields: RollNo, Name, Semester]. 
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class StudentInfoGUI extends JFrame {
+    private JTextField rollNoField;
+    private JTextField nameField;
+    private JTextField semesterField;
+
+    public StudentInfoGUI() {
+        setTitle("Student Information");
+        setSize(400, 200);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(4, 2));
+
+        panel.add(new JLabel("Roll No:"));
+        rollNoField = new JTextField();
+        panel.add(rollNoField);
+
+        panel.add(new JLabel("Name:"));
+        nameField = new JTextField();
+        panel.add(nameField);
+
+        panel.add(new JLabel("Semester:"));
+        semesterField = new JTextField();
+        panel.add(semesterField);
+
+        JButton submitButton = new JButton("Submit");
+        submitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String rollNo = rollNoField.getText();
+                String name = nameField.getText();
+                String semester = semesterField.getText();
+
+                String message = "Roll No: " + rollNo + "\nName: " + name + "\nSemester: " + semester;
+                JOptionPane.showMessageDialog(null, message, "Student Information", JOptionPane.INFORMATION_MESSAGE);
+            }
+        });
+        panel.add(submitButton);
+
+        getContentPane().add(panel);
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new StudentInfoGUI();
+            }
+        });
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ Write a Java program to implement a simple calculator with basic arithmetic
+operations (addition, subtraction, multiplication, division).
+
+import java.util.Scanner;
+
+public class SimpleCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Simple Calculator");
+        System.out.println("Enter the operation (+, -, *, /):");
+        char operation = scanner.nextLine().charAt(0);
+
+        System.out.println("Enter the first number:");
+        double num1 = scanner.nextDouble();
+
+        System.out.println("Enter the second number:");
+        double num2 = scanner.nextDouble();
+
+        double result;
+
+        switch (operation) {
+            case '+':
+                result = num1 + num2;
+                System.out.println("Result: " + result);
+                break;
+            case '-':
+                result = num1 - num2;
+                System.out.println("Result: " + result);
+                break;
+            case '*':
+                result = num1 * num2;
+                System.out.println("Result: " + result);
+                break;
+            case '/':
+                if (num2 != 0) {
+                    result = num1 / num2;
+                    System.out.println("Result: " + result);
+                } else {
+                    System.out.println("Error: Division by zero");
+                }
+                break;
+            default:
+                System.out.println("Invalid operation");
+        }
+
+        scanner.close();
+    }
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+Implement a Java program to performs Create, Read operations from File and displays the results. [Using FILE only]
+
+
+import java.io.*;
+
+public class FileReadWriteExample {
+
+    public static void main(String[] args) {
+        String fileName = "data.txt";
+
+        // Write data to file
+        writeToFile(fileName, "Hello, World!");
+
+        // Read data from file
+        String data = readFromFile(fileName);
+        System.out.println("Data read from file: " + data);
+    }
+
+    // Method to write data to file
+    public static void writeToFile(String fileName, String data) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
+            writer.write(data);
+            System.out.println("Data written to file successfully.");
+        } catch (IOException e) {
+            System.err.println("Error writing to file: " + e.getMessage());
+        }
+    }
+
+    // Method to read data from file
+    public static String readFromFile(String fileName) {
+        StringBuilder content = new StringBuilder();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                content.append(line).append("\n");
+            }
+        } catch (FileNotFoundException e) {
+            System.err.println("File not found: " + e.getMessage());
+        } catch (IOException e) {
+            System.err.println("Error reading from file: " + e.getMessage());
+        }
+
+        return content.toString();
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Create GUI based application to take 3 input from textBox and show message in dialogBox on submit.
+[Fields: RollNo, Name, Semester]. in java 
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class StudentInfoGUI extends JFrame {
+    private JTextField rollNoField;
+    private JTextField nameField;
+    private JTextField semesterField;
+
+    public StudentInfoGUI() {
+        setTitle("Student Information");
+        setSize(400, 200);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(4, 2));
+
+        panel.add(new JLabel("Roll No:"));
+        rollNoField = new JTextField();
+        panel.add(rollNoField);
+
+        panel.add(new JLabel("Name:"));
+        nameField = new JTextField();
+        panel.add(nameField);
+
+        panel.add(new JLabel("Semester:"));
+        semesterField = new JTextField();
+        panel.add(semesterField);
+
+        JButton submitButton = new JButton("Submit");
+        submitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String rollNo = rollNoField.getText();
+                String name = nameField.getText();
+                String semester = semesterField.getText();
+
+                String message = "Roll No: " + rollNo + "\nName: " + name + "\nSemester: " + semester;
+                JOptionPane.showMessageDialog(null, message, "Student Information", JOptionPane.INFORMATION_MESSAGE);
+            }
+        });
+        panel.add(submitButton);
+
+        getContentPane().add(panel);
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new StudentInfoGUI();
+            }
+        });
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
