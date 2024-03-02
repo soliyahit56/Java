@@ -2725,17 +2725,19 @@ create following classes /interface: with following  functionality:
 (2) hindi_book(book_name,book_price,book_type), - basic class implement book interface.
 (3) English_book(releasing_year)- chiled  class addgetdetils and showdetiles functions all classes. in java
 
-// Define the Book interface
+import java.util.Scanner;
+
+// Interface for Book
 interface Book {
     void getDetails();
     void showDetails();
 }
 
-// Define the basic class implementing the Book interface
+// Hindi Book class implementing Book interface
 class HindiBook implements Book {
-    private String bookName;
-    private double bookPrice;
-    private String bookType;
+    String bookName;
+    double bookPrice;
+    String bookType;
 
     public HindiBook(String bookName, double bookPrice, String bookType) {
         this.bookName = bookName;
@@ -2743,18 +2745,31 @@ class HindiBook implements Book {
         this.bookType = bookType;
     }
 
+    @Override
     public void getDetails() {
-        System.out.println("Name: " + bookName + ", Price: " + bookPrice + ", Type: " + bookType);
+        System.out.println("Getting details of Hindi book...");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter book name: ");
+        bookName = scanner.nextLine();
+        System.out.print("Enter book price: ");
+        bookPrice = scanner.nextDouble();
+        scanner.nextLine(); // Consume newline
+        System.out.print("Enter book type: ");
+        bookType = scanner.nextLine();
     }
 
+    @Override
     public void showDetails() {
-        getDetails();
+        System.out.println("Showing details of Hindi book:");
+        System.out.println("Name: " + bookName);
+        System.out.println("Price: " + bookPrice);
+        System.out.println("Type: " + bookType);
     }
 }
 
-// Define the child class EnglishBook inheriting from HindiBook
+// English Book class extending HindiBook
 class EnglishBook extends HindiBook {
-    private int releasingYear;
+    int releasingYear;
 
     public EnglishBook(String bookName, double bookPrice, String bookType, int releasingYear) {
         super(bookName, bookPrice, bookType);
@@ -2764,25 +2779,49 @@ class EnglishBook extends HindiBook {
     @Override
     public void getDetails() {
         super.getDetails();
-        System.out.println("Releasing Year: " + releasingYear);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter releasing year: ");
+        releasingYear = scanner.nextInt();
     }
 
     @Override
     public void showDetails() {
-        getDetails();
+        super.showDetails();
+        System.out.println("Releasing Year: " + releasingYear);
     }
 }
 
-// Main class for testing
 public class Main {
     public static void main(String[] args) {
-        // Creating HindiBook object
-        HindiBook hindiBook = new HindiBook("Hindi Book", 100, "Fiction");
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter details for Hindi book:");
+        System.out.print("Enter book name: ");
+        String hindiBookName = scanner.nextLine();
+        System.out.print("Enter book price: ");
+        double hindiBookPrice = scanner.nextDouble();
+        scanner.nextLine(); // Consume newline
+        System.out.print("Enter book type: ");
+        String hindiBookType = scanner.nextLine();
+
+        HindiBook hindiBook = new HindiBook(hindiBookName, hindiBookPrice, hindiBookType);
         hindiBook.showDetails();
 
-        // Creating EnglishBook object
-        EnglishBook englishBook = new EnglishBook("English Book", 150, "Non-fiction", 2023);
+        System.out.println("\nEnter details for English book:");
+        System.out.print("Enter book name: ");
+        String englishBookName = scanner.nextLine();
+        System.out.print("Enter book price: ");
+        double englishBookPrice = scanner.nextDouble();
+        scanner.nextLine(); // Consume newline
+        System.out.print("Enter book type: ");
+        String englishBookType = scanner.nextLine();
+        System.out.print("Enter releasing year: ");
+        int releasingYear = scanner.nextInt();
+
+        EnglishBook englishBook = new EnglishBook(englishBookName, englishBookPrice, englishBookType, releasingYear);
         englishBook.showDetails();
+
+        scanner.close();
     }
 }
 --------------------------------------------------------------------------------------------------------------------------------------------------
