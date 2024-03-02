@@ -1,178 +1,3 @@
-Day-1
-
-2.Write the “Hello World” - first Java Program. Compile and execute it.
-
-class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
-    }
-}
-
- 
-
-3. Write comments (Author, date, objective of the program, main function) in        the above program.
-
-class p2 {
-    public static void main(String[] args) {
-        System.out.println("Author : Hit Soliya");
-        System.out.println("Date : January 22,2024");
-        System.out.println("Objective : This program assingment a simple");
-    }
-}
-
-4.   Create following arrays and assign incremental values starting from 1 to each element. 
-    1.	Array with 2 rows and 3 columns. 
-    2.	Array with 2 rows. First row has 3 cells, and second row has 2 cells.
-            Print the content of both the arrays. 
-
-class IncrementalArrays {
-    public static void main(String[] args) {
-        
-        int[][] array1 = new int[2][3];
-        fillArray(array1);
-
-        
-        int[][] array2 = new int[2][];
-        array2[0] = new int[3];
-        array2[1] = new int[2];
-        fillArray(array2);
-
-        
-        System.out.println("Array 1:");
-        printArray(array1);
-
-        System.out.println("\nArray 2:");
-        printArray(array2);
-    }
-
-    
-    private static void fillArray(int[][] array) {
-        int value = 1;
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                array[i][j] = value++;
-            }
-        }
-    }
-
-    
-    private static void printArray(int[][] array) {
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                System.out.print(array[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
-}
-
- 
-
-
-
-
-
-6.	Write a program to print your name and address.
-class NameAndAddress {
-    public static void main(String[] args) {
-        // Print name and address
-        System.out.println("Name: Your Name");
-        System.out.println("Address: Anida, Amreli, Gujrat");
-    }
-}
-
-Day-2
-
-1.	Write a program to perform addition of two numbers and display its answer. (No need to take user input)
-
-class AdditionProgram {
-    public static void main(String[] args) {
-       
-        int num1 = 5;
-        int num2 = 7;
-
-        
-        int sum = num1 + num2;
-
-       
-        System.out.println("The sum of " + num1 + " and " + num2 + " is: " + sum);
-    }
-}
-
- 
-
-
-2.	Write a program to perform addition of two given numbers and display its answer. (With user input)
-
-import java.util.Scanner;
-
-class AdditionWithInput {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Enter the first number: ");
-        int num1 = scanner.nextInt();
-        System.out.print("Enter the second number: ");
-        
-        int num2 = scanner.nextInt();
-
-       
-        scanner.close();
-        int sum = num1 + num2;
-
-        System.out.println("The sum of " + num1 + " and " + num2 + " is: " + sum);
-    }
-}
-
-3.	Write a program to perform addition of numbers between 3 to 10 using for loop.
-
-class AdditionWithForLoop {
-    public static void main(String[] args) {
-        int startNumber = 3;
-        int endNumber = 10;
-        int sum = 0;
-        for (int i = startNumber; i <= endNumber; i++) {
-            sum += i;
-        }
-
-             System.out.println("The sum of numbers between " + startNumber + " and " + endNumber + " is: " + sum);
-    }
-}
-
- 
-
-
-4.	Write a program to find the maximum from two numbers. (Without user input)
-
-class MaximumOfTwoNumbers {
-    public static void main(String[] args) {
-        
-        int num1 = 15;
-        int num2 = 8;
-
-        
-        int maximum = (num1 > num2) ? num1 : num2;
-
-        System.out.println("The maximum of " + num1 + " and " + num2 + " is: " + maximum);
-    }
-}
-
- 
-
-
-
-5.	Check the working of the following code and give comments with respect to use of “outer” :
-      outer:
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 10; j++) {
-                if (j == 1)
-                    break outer;
-                System.out.println(" value of j = " + j);
-            }
-        } // end of outer loop
-
- 
-
 6.	Write a program to create three objects of Student class(name, age). Write getDetails method which takes user inputs (name and age). Write other method named displayDetails to display the name and age of the user. Create three objects and test working of above two methods.
 
 import java.util.*;
@@ -2824,6 +2649,7 @@ public class Main {
         scanner.close();
     }
 }
+
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 create GUI to get the information about book .press button display all details of book in java
@@ -2833,77 +2659,60 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-class Book {
-    private String name;
-    private double price;
-    private String type;
+class BookInfoGUI extends JFrame implements ActionListener {
+    private JLabel nameLabel, priceLabel, typeLabel;
+    private JTextField nameField, priceField, typeField;
+    private JButton displayButton;
 
-    public Book(String name, double price, String type) {
-        this.name = name;
-        this.price = price;
-        this.type = type;
-    }
+    public BookInfoGUI() {
+        setTitle("Book Information");
+        setSize(300, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new GridLayout(4, 2));
 
-    public String getDetails() {
-        return "Name: " + name + "\nPrice: " + price + "\nType: " + type;
-    }
-}
+        nameLabel = new JLabel("Enter Book Name:");
+        add(nameLabel);
 
-class BookGUI extends JFrame {
-    private JTextField nameField;
-    private JTextField priceField;
-    private JTextField typeField;
-    private JTextArea detailsArea;
-
-    public BookGUI() {
-        setTitle("Book Details");
-        setSize(400, 300);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-
-        JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(4, 2));
-
-        panel.add(new JLabel("Name:"));
         nameField = new JTextField();
-        panel.add(nameField);
+        add(nameField);
 
-        panel.add(new JLabel("Price:"));
+        priceLabel = new JLabel("Enter Book Price:");
+        add(priceLabel);
+
         priceField = new JTextField();
-        panel.add(priceField);
+        add(priceField);
 
-        panel.add(new JLabel("Type:"));
+        typeLabel = new JLabel("Enter Book Type:");
+        add(typeLabel);
+
         typeField = new JTextField();
-        panel.add(typeField);
+        add(typeField);
 
-        JButton displayButton = new JButton("Display Details");
-        displayButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String name = nameField.getText();
-                double price = Double.parseDouble(priceField.getText());
-                String type = typeField.getText();
-
-                Book book = new Book(name, price, type);
-                detailsArea.setText(book.getDetails());
-            }
-        });
-        panel.add(displayButton);
-
-        detailsArea = new JTextArea();
-        panel.add(detailsArea);
-
-        getContentPane().add(panel);
-        setVisible(true);
+        displayButton = new JButton("Display Details");
+        add(displayButton);
+        displayButton.addActionListener(this);
     }
-}
 
-public class Main {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == displayButton) {
+            String name = nameField.getText();
+            String price = priceField.getText();
+            String type = typeField.getText();
+
+            String details = "Book Details:\n";
+            details += "Name: " + name + "\n";
+            details += "Price: " + price + "\n";
+            details += "Type: " + type + "\n";
+
+            JOptionPane.showMessageDialog(this, details, "Book Information", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new BookGUI();
-            }
+        SwingUtilities.invokeLater(() -> {
+            BookInfoGUI bookInfoGUI = new BookInfoGUI();
+            bookInfoGUI.setVisible(true);
         });
     }
 }
@@ -2919,7 +2728,9 @@ Add default and parameterized constructors in all the three classes.
 Add show Details functions in all three classes
 
 
-// Abstract base class Employee
+import java.util.Scanner;
+
+// Base Class: Employee (Abstract class)
 abstract class Employee {
     protected int id;
     protected String name;
@@ -2938,7 +2749,6 @@ abstract class Employee {
 
     // Default constructor
     public Employee() {
-        // Default values
         this.id = 0;
         this.name = "";
         this.age = 0;
@@ -2947,10 +2757,10 @@ abstract class Employee {
     }
 
     // Abstract method to show details
-    public abstract void showDetails();
+    abstract void showDetails();
 }
 
-// Developer class, a child class of Employee
+// Child Class: Developer
 class Developer extends Employee {
     private String technology;
     private int experience;
@@ -2969,21 +2779,20 @@ class Developer extends Employee {
         this.experience = 0;
     }
 
-    // Overriding method to show details
+    // Show details function for Developer
     @Override
-    public void showDetails() {
-        System.out.println("Employee Type: Developer");
-        System.out.println("Id: " + id);
+    void showDetails() {
+        System.out.println("Employee ID: " + id);
         System.out.println("Name: " + name);
         System.out.println("Age: " + age);
         System.out.println("Working Hours: " + workingHours);
         System.out.println("Salary: " + salary);
         System.out.println("Technology: " + technology);
-        System.out.println("Experience: " + experience);
+        System.out.println("Experience: " + experience + " years");
     }
 }
 
-// SEO class, a child class of Employee
+// Child Class: SEO
 class SEO extends Employee {
     private String strategy;
     private String qualification;
@@ -3002,32 +2811,72 @@ class SEO extends Employee {
         this.qualification = "";
     }
 
-    // Overriding method to show details
+    // Show details function for SEO
     @Override
-    public void showDetails() {
-        System.out.println("Employee Type: SEO");
-        System.out.println("Id: " + id);
+    void showDetails() {
+        System.out.println("Employee ID: " + id);
         System.out.println("Name: " + name);
         System.out.println("Age: " + age);
         System.out.println("Working Hours: " + workingHours);
         System.out.println("Salary: " + salary);
-        System.out.println("Strategy: " + strategy);
+        System.out.println("SEO Strategy: " + strategy);
         System.out.println("Qualification: " + qualification);
     }
 }
 
-// Main class to test the classes
-public class Main {
+class Main {
     public static void main(String[] args) {
-        // Creating Developer object and showing details
-        Developer developer = new Developer(101, "John", 30, 40, 5000, "Java", 5);
+        Scanner scanner = new Scanner(System.in);
+
+        // Input details for Developer
+        System.out.println("Enter Developer Details:");
+        System.out.print("ID: ");
+        int devId = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+        System.out.print("Name: ");
+        String devName = scanner.nextLine();
+        System.out.print("Age: ");
+        int devAge = scanner.nextInt();
+        System.out.print("Working Hours: ");
+        int devWorkingHours = scanner.nextInt();
+        System.out.print("Salary: ");
+        double devSalary = scanner.nextDouble();
+        scanner.nextLine(); // Consume newline
+        System.out.print("Technology: ");
+        String devTechnology = scanner.nextLine();
+        System.out.print("Experience (in years): ");
+        int devExperience = scanner.nextInt();
+
+        // Create Developer object and display details
+        Developer developer = new Developer(devId, devName, devAge, devWorkingHours, devSalary, devTechnology, devExperience);
         developer.showDetails();
 
-        // Creating SEO object and showing details
-        SEO seo = new SEO(201, "Emily", 28, 35, 4500, "On-page SEO", "Marketing degree");
+        // Input details for SEO
+        System.out.println("\nEnter SEO Details:");
+        System.out.print("ID: ");
+        int seoId = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+        System.out.print("Name: ");
+        String seoName = scanner.nextLine();
+        System.out.print("Age: ");
+        int seoAge = scanner.nextInt();
+        System.out.print("Working Hours: ");
+        int seoWorkingHours = scanner.nextInt();
+        System.out.print("Salary: ");
+        double seoSalary = scanner.nextDouble();
+        scanner.nextLine(); // Consume newline
+        System.out.print("SEO Strategy: ");
+        String seoStrategy = scanner.nextLine();
+        System.out.print("Qualification: ");
+        String seoQualification = scanner.nextLine();
+
+        // Create SEO object and display details
+        SEO seo = new SEO(seoId, seoName, seoAge, seoWorkingHours, seoSalary, seoStrategy, seoQualification);
         seo.showDetails();
-    }
-}
+
+        scanner.close();
+   
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -3256,3 +3105,193 @@ public class StudentInfoGUI extends JFrame {
     }
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Design a class Library that represents a library with attributes such as name and location. 
+Include methods to add and remove books, and to display library details. 
+Write a Java program to demonstrate the functionality of the Library class by creating instances and performing book operations.
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class Book {
+    private String title;
+    private String author;
+
+    public Book(String title, String author) {
+        this.title = title;
+        this.author = author;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+}
+
+class Library {
+    private String name;
+    private String location;
+    private ArrayList<Book> books;
+
+    public Library(String name, String location) {
+        this.name = name;
+        this.location = location;
+        this.books = new ArrayList<>();
+    }
+
+    public void addBook(Book book) {
+        books.add(book);
+    }
+
+    public void removeBook(String title) {
+        for (int i = 0; i < books.size(); i++) {
+            if (books.get(i).getTitle().equals(title)) {
+                books.remove(i);
+                return;
+            }
+        }
+        System.out.println("Book not found in the library.");
+    }
+
+    public void displayDetails() {
+        System.out.println("Library Name: " + name);
+        System.out.println("Location: " + location);
+        System.out.println("Books Available:");
+        for (Book book : books) {
+            System.out.println("Title: " + book.getTitle() + ", Author: " + book.getAuthor());
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input library details
+        System.out.print("Enter library name: ");
+        String libraryName = scanner.nextLine();
+        System.out.print("Enter library location: ");
+        String libraryLocation = scanner.nextLine();
+
+        // Create library object
+        Library library = new Library(libraryName, libraryLocation);
+
+        // Add books to the library
+        System.out.print("Enter the number of books to add: ");
+        int numBooks = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+
+        for (int i = 0; i < numBooks; i++) {
+            System.out.println("Enter details for Book " + (i + 1) + ":");
+            System.out.print("Title: ");
+            String title = scanner.nextLine();
+            System.out.print("Author: ");
+            String author = scanner.nextLine();
+
+            Book book = new Book(title, author);
+            library.addBook(book);
+        }
+
+        // Display library details
+        System.out.println("\nLibrary Details:");
+        library.displayDetails();
+
+        // Remove a book from the library
+        System.out.print("\nEnter the title of the book to remove: ");
+        String bookToRemove = scanner.nextLine();
+        library.removeBook(bookToRemove);
+
+        // Display updated library details
+        System.out.println("\nUpdated Library Details:");
+        library.displayDetails();
+
+        scanner.close();
+    }
+}
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+NOTEPAD
+
+import javax.swing.*;
+import java.awt.event.*;
+import java.awt.*;
+
+class Notepad implements ActionListener{
+    JFrame f = new JFrame();
+    JMenuBar mb = new JMenuBar();
+    JMenu edit,file,help;
+    JMenuItem copy,cut,paste,selectall;
+    JMenuItem save,saveas,newfile,openfile;
+    JTextArea t = new JTextArea();
+    Notepad(){
+        edit = new JMenu("Edit");
+        file = new JMenu("File");
+        help = new JMenu("Help");
+
+        copy = new JMenuItem("Copy");
+        paste = new JMenuItem("Paste");
+        cut = new JMenuItem("Cut");
+        selectall = new JMenuItem("Select all");
+
+        save = new JMenuItem("Save");
+        saveas = new JMenuItem("Save as");
+        newfile = new JMenuItem("New File");
+        openfile = new JMenuItem("Open file");
+
+        f.add(t);
+        t.setBounds(0,0,3000,3000);
+        edit.add(cut);
+        edit.add(paste);
+        edit.add(copy);
+        edit.add(selectall);
+        t.setFont(new Font("sans-serif",Font.BOLD,20));
+        edit.setFont(new Font("sans-serif",Font.ITALIC,14));
+
+        file.add(save);
+        file.add(saveas);
+        file.add(newfile);
+        file.add(openfile);
+        file.setFont(new Font("sans-serif",Font.ITALIC,14));
+        help.setFont(new Font("sans-serif",Font.ITALIC,14));
+
+        cut.addActionListener(this);
+        copy.addActionListener(this);
+        paste.addActionListener(this);
+        selectall.addActionListener(this);
+        mb.add(edit);
+        mb.add(file);
+        mb.add(help);
+        mb.setFont(new Font("sans-serif",Font.BOLD,40));
+
+        f.add(mb);
+        f.setLayout(null);
+        f.setJMenuBar(mb);
+        f.setVisible(true);
+        f.setSize(400,400);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public void actionPerformed(ActionEvent e){
+        if(e.getSource()==cut){
+            t.cut();
+        }
+        if(e.getSource()==paste){
+            t.paste();
+        }
+        if(e.getSource()==copy){
+            t.copy();
+        }
+        if(e.getSource()==selectall){
+            t.selectAll();
+        }
+    }
+    public static void main(String[] args){
+        Notepad obj = new Notepad();
+    }
+}
